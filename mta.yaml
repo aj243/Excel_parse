@@ -1,3 +1,12 @@
 ID: Excel_parse
 _schema-version: '2.1'
 version: 0.0.1
+
+modules:
+ - name: Excel_express_app
+   type: nodejs
+   path: Excel_express_app
+   provides:
+    - name: Excel_express_app_api
+      properties:
+         url: ${default-url}
