@@ -10,3 +10,19 @@ modules:
     - name: Excel_express_app_api
       properties:
          url: ${default-url}
+
+ - name: EXCEL_DB
+   type: hdb
+   path: EXCEL_DB
+   requires:
+    - name: hdi_EXCEL_DB
+
+
+resources:
+ - name: hdi_EXCEL_DB
+   parameters:
+      config:
+         schema: EXCEL_HANA
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
